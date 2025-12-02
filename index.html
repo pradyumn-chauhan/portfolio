@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pradyumn Chauhan | Product Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Pradyumn Chauhan – Product Manager focused on AI, data, fintech, collections & insurance." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-elevated: #0b1020;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2933;
+      --badge-bg: rgba(15, 118, 110, 0.2);
+      --badge-text: #a7f3d0;
+      --danger: #f97373;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+      --radius-lg: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+    nav a {
+      color: var(--muted);
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-main {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.6));
+      border-radius: 22px;
+      padding: 24px 24px 22px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      opacity: 0.12;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(96, 165, 250, 0.3), transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(52, 211, 153, 0.2), transparent 55%);
+      z-index: -1;
+    }
+    .eyebrow {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-size: 28px;
+      font-weight: 650;
+      margin-bottom: 8px;
+    }
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      max-width: 560px;
+    }
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .metric-pill {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.5), rgba(15, 23, 42, 0.9));
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .metric-pill span {
+      font-size: 11px;
+      color: #a5b4fc;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      border-radius: 999px;
+      padding: 9px 15px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.08s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45);
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(129, 140, 248, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #4338ca, #4f46e5);
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card {
+      background: radial-gradient(circle at top, #020617 0, #020617 35%, #020617 100%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      padding: 16px 16px 14px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .card-body {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .chip-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.38);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.8);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 20px;
+    }
+    @media (max-width: 960px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+    .section h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .section p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .timeline-item {
+      padding: 12px 12px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(30, 64, 175, 0.6);
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.45), rgba(15, 23, 42, 0.96));
+    }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .timeline-role {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .timeline-meta {
+      font-size: 11px;
+      color: #9ca3af;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .timeline-company {
+      font-size: 12px;
+      color: #c7d2fe;
+      margin-bottom: 4px;
+    }
+    .timeline-body {
+      font-size: 12px;
+      color: #e5e7eb;
+    }
+    .timeline-body strong {
+      font-weight: 600;
+    }
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .tag {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(191, 219, 254, 0.68);
+      color: #bfdbfe;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 6px;
+    }
+    .pill {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      color: var(--muted);
+    }
+
+    .case-card {
+      border-radius: 16px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 12px 12px 11px;
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.9));
+      margin-bottom: 10px;
+    }
+    .case-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .case-subtitle {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .case-bullets {
+      font-size: 12px;
+      color: var(--muted);
+      padding-left: 16px;
+      margin-bottom: 4px;
+    }
+    .case-bullets li {
+      margin-bottom: 3px;
+    }
+    .case-metric {
+      font-size: 11px;
+      color: #a5b4fc;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .link-pill {
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.9);
+    }
+    .link-pill span {
+      font-size: 13px;
+    }
+
+    footer {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">PC / Product Management</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Case Studies</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-main">
+        <div class="eyebrow">Product · AI · Fintech</div>
+        <h1 class="hero-title">Hi, I'm Pradyumn — a Product Manager building AI & data-driven products for collections, payments & insurance.</h1>
+        <p class="hero-subtitle">
+          I enjoy taking ambiguous business problems in regulated domains and turning them into experiments, roadmaps, and products that ship across geographies.
+        </p>
+
+        <div class="hero-metrics">
+          <div class="metric-pill">
+            <span>▲</span> $44M+ collections impact
+          </div>
+          <div class="metric-pill">
+            <span>⚡</span> $600K / year cost savings
+          </div>
+          <div class="metric-pill">
+            <span>📱</span> 40% lift in policy bookings
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">
+            View case studies
+          </a>
+          <a class="btn" href="#contact">
+            Contact me
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="card">
+          <div class="badge">
+            ● Open to opportunities
+          </div>
+          <div class="card-title">Quick snapshot</div>
+          <div class="card-body">
+            Product Manager with experience across <strong>collections, fintech & general insurance</strong>, working with clients like
+            <strong>American Express, JP Morgan & ICICI Lombard</strong>. Comfortable in the weeds with data, infra & experimentation.
+            <div class="chip-row">
+              <span class="chip">Collections & credit risk</span>
+              <span class="chip">AI-led engagement</span>
+              <span class="chip">Experimentation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Currently focused on</div>
+          <div class="card-body">
+            - Designing AI-assisted journeys for collections & repayments<br />
+            - Bringing comms infra in-house (AWS, APIs) to save cost & increase control<br />
+            - Using data to prioritize what truly moves revenue, not vanity features
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section>
+        <!-- About -->
+        <section class="section" id="about">
+          <h2>About</h2>
+          <p>
+            I’m a Product Manager with a background across <strong>software engineering, data & ML, and digital product ownership</strong>.
+            I’ve worked on products touching <strong>collections, payments, digital insurance distribution, fraud & churn</strong>.
+            <br /><br />
+            My sweet spot is where <strong>regulation, risk, and revenue</strong> meet — designing products that are compliant,
+            technically sound, and commercially meaningful.
+          </p>
+        </section>
+
+        <!-- Experience -->
+        <section class="section" id="experience">
+          <h2>Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <div class="timeline-role">Product Manager</div>
+                <div class="timeline-meta">Transworld Systems Inc · Collections · US & EMEA</div>
+              </div>
+              <div class="timeline-company">Working with portfolios for American Express & JP Morgan</div>
+              <div class="timeline-body">
+                Led product for digital collections and customer engagement, across SMS, email and web journeys.
+                <br />
+                <strong>Highlights:</strong>
+                <ul class="case-bullets">
+                  <li>Drove <strong>$44M+ collections impact</strong> across FY23–25 by optimizing omnichannel strategies.</li>
+                  <li>Built in-house <strong>AWS + SendGrid email platform</strong>, saving ~<strong>$600K/year</strong>.</li>
+                  <li>Introduced AI-driven communication journeys & A/B tests to improve engagement and recovery.</li>
+                </ul>
+                <div class="timeline-tags">
+                  <span class="tag">Collections</span>
+                  <span class="tag">Experimentation</span>
+                  <span class="tag">AWS</span>
+                  <span class="tag">Omnichannel comms</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <div class="timeline-role">Product Manager</div>
+                <div class="timeline-meta">ICICI Lombard · iPartner & NYSA</div>
+              </div>
+              <div class="timeline-company">Digital insurance distribution products</div>
+              <div class="timeline-body">
+                Owned feature development and growth for partner-facing & customer-facing insurance apps.
+                <br />
+                <strong>Highlights:</strong>
+                <ul class="case-bullets">
+                  <li><strong>40% increase</strong> in policy bookings via product & UX improvements.</li>
+                  <li>Shipped 60+ features improving engagement, efficiency and partner experience.</li>
+                  <li>Drove adoption and usage across agents & partners.</li>
+                </ul>
+                <div class="timeline-tags">
+                  <span class="tag">Insurance</span>
+                  <span class="tag">Growth</span>
+                  <span class="tag">Mobile app</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <div class="timeline-role">Senior Systems Engineer / Analyst</div>
+                <div class="timeline-meta">Infosys</div>
+              </div>
+              <div class="timeline-company">Data & ML for financial services clients</div>
+              <div class="timeline-body">
+                Worked on risk, churn & fraud-related solutions with ML & analytics for enterprise clients.
+                <br />
+                <strong>Highlights:</strong>
+                <ul class="case-bullets">
+                  <li>Built models to improve early risk detection for customer & transaction behaviour.</li>
+                  <li>Worked on solutions aligned with <strong>PCI-DSS & GDPR</strong> requirements.</li>
+                </ul>
+                <div class="timeline-tags">
+                  <span class="tag">ML & data</span>
+                  <span class="tag">Risk & fraud</span>
+                  <span class="tag">Enterprise</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Case Studies / Work -->
+        <section class="section" id="work">
+          <h2>Selected work / case studies</h2>
+
+          <div class="case-card">
+            <div class="case-title">AI-driven digital collections for Amex & JP Morgan</div>
+            <div class="case-subtitle">Transworld Systems Inc · Collections platform</div>
+            <ul class="case-bullets">
+              <li>Redesigned digital engagement strategy across SMS, email & web with an experimentation-first approach.</li>
+              <li>Introduced AI-assisted communication journeys and optimized timing, frequency & messaging.</li>
+              <li>Moved email comms in-house on AWS + SendGrid, unlocking flexibility and significant vendor savings.</li>
+            </ul>
+            <div class="case-metric">Impact: $44M+ in collections influenced · $600K / year savings in email costs.</div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-title">Driving partner growth for iPartner (ICICI Lombard)</div>
+            <div class="case-subtitle">Insurance sales & servicing app</div>
+            <ul class="case-bullets">
+              <li>Shipped features to improve onboarding, search, quotes and policy issuance flows for agents.</li>
+              <li>Worked closely with business & tech to prioritize roadmap using data & partner feedback.</li>
+              <li>Enhanced app experience to drive more policies and repeat usage.</li>
+            </ul>
+            <div class="case-metric">Impact: 40% uplift in policy bookings · deeper partner engagement.</div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-title">Risk & churn analytics for financial services</div>
+            <div class="case-subtitle">Infosys · ML & analytics</div>
+            <ul class="case-bullets">
+              <li>Contributed to ML solutions for churn & fraud detection in highly regulated environments.</li>
+              <li>Collaborated with cross-functional teams to translate business risk into data problems.</li>
+            </ul>
+            <div class="case-metric">Impact: Better early-warning signals & decision support for risk teams.</div>
+          </div>
+
+          <p style="font-size: 12px; color: var(--muted); margin-top: 6px;">
+            I’ll be adding public-friendly deep dives & redacted PRDs here soon. Feel free to reach out if you’d like to discuss any of this in detail.
+          </p>
+        </section>
+      </section>
+
+      <!-- Right column: Skills & Links -->
+      <section>
+        <section class="section" id="skills">
+          <h2>Skills & tools</h2>
+          <div class="section">
+            <strong style="font-size: 13px;">Product</strong>
+            <div class="pill-row">
+              <span class="pill">Roadmapping</span>
+              <span class="pill">OKRs</span>
+              <span class="pill">RICE / prioritization</span>
+              <span class="pill">Experiment design</span>
+              <span class="pill">User stories & PRDs</span>
+              <span class="pill">Stakeholder management</span>
+            </div>
+          </div>
+          <div class="section">
+            <strong style="font-size: 13px;">Data & analytics</strong>
+            <div class="pill-row">
+              <span class="pill">SQL</span>
+              <span class="pill">Dashboards & KPIs</span>
+              <span class="pill">Funnels & cohorts</span>
+              <span class="pill">A/B testing</span>
+            </div>
+          </div>
+          <div class="section">
+            <strong style="font-size: 13px;">Tech & AI</strong>
+            <div class="pill-row">
+              <span class="pill">AWS (Lambda, Glue, S3, CloudWatch)</span>
+              <span class="pill">APIs & integrations</span>
+              <span class="pill">SendGrid</span>
+              <span class="pill">AI-assisted journeys</span>
+            </div>
+          </div>
+          <div class="section">
+            <strong style="font-size: 13px;">Domains</strong>
+            <div class="pill-row">
+              <span class="pill">Collections & recoveries</span>
+              <span class="pill">Fintech & payments</span>
+              <span class="pill">Insurance</span>
+              <span class="pill">Risk & compliance</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Links</h2>
+          <div class="link-row">
+            <a class="link-pill" href="https://github.com/pradyumn-chauhan" target="_blank" rel="noopener">
+              <span>🐙</span> GitHub
+            </a>
+            <a class="link-pill" href="https://www.linkedin.com/in/pradyumn-chauhan/" target="_blank" rel="noopener">
+              <span>🔗</span> LinkedIn
+            </a>
+            <!-- Replace with your CV URL on Google Drive or similar once ready -->
+            <!-- <a class="link-pill" href="#" target="_blank" rel="noopener">
+              <span>📄</span> Download CV
+            </a> -->
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <h2>Contact</h2>
+          <p style="font-size: 13px; color: var(--muted); margin-bottom: 6px;">
+            Best way to reach me is via email or LinkedIn. Always happy to talk about
+            <strong>product roles, fintech/collections problems, or AI-driven customer journeys.</strong>
+          </p>
+          <p style="font-size: 13px;">
+            📧 <a href="mailto:pradyumnchauhan.236@gmail.com">pradyumnchauhan.236@gmail.com</a><br />
+            🔗 <a href="https://www.linkedin.com/in/pradyumn-chauhan/" target="_blank" rel="noopener">linkedin.com/in/pradyumn-chauhan</a>
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> · Built & deployed via GitHub Pages</div>
+      <div style="opacity: 0.8;">Last updated: 2025</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
